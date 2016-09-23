@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reunioes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Descricao</th>
+      <th>Data</th>
+      <th>Hora</th>
+      <th>Local</th>
+      <th>Convidados</th>
+      <th>Imagem</th>
+      <th>Observacoes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reunioes.each do |reuniao| %>
+      <tr>
+        <td><%= reuniao.codigo %></td>
+        <td><%= reuniao.descricao %></td>
+        <td><%= reuniao.data %></td>
+        <td><%= reuniao.hora %></td>
+        <td><%= reuniao.local %></td>
+        <td><%= reuniao.convidados %></td>
+        <td><%= reuniao.imagem %></td>
+        <td><%= reuniao.observacoes %></td>
+        <td><%= link_to 'Show', reuniao %></td>
+        <td><%= link_to 'Edit', edit_reuniao_path(reuniao) %></td>
+        <td><%= link_to 'Destroy', reuniao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reuniao', new_reuniao_path %>

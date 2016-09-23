@@ -1,0 +1,1 @@
+json.partial! "reunioes/reuniao", reuniao: @reuniao

@@ -1,0 +1,2 @@
+class Pauta < ApplicationRecord
+end

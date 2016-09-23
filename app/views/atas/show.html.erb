@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @ata.codigo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @ata.descricao %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @ata.autor %>
+</p>
+
+<%= link_to 'Edit', edit_ata_path(@ata) %> |
+<%= link_to 'Back', atas_path %>

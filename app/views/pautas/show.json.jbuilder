@@ -1,0 +1,1 @@
+json.partial! "pautas/pauta", pauta: @pauta

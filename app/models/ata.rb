@@ -1,0 +1,2 @@
+class Ata < ApplicationRecord
+end

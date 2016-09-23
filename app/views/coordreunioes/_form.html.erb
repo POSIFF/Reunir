@@ -1,0 +1,32 @@
+<%= form_for(coordreuniao) do |f| %>
+  <% if coordreuniao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coordreuniao.errors.count, "error") %> prohibited this coordreuniao from being saved:</h2>
+
+      <ul>
+      <% coordreuniao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :matricula %>
+    <%= f.number_field :matricula %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :funcao %>
+    <%= f.text_field :funcao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

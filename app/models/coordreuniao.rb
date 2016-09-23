@@ -1,0 +1,2 @@
+class Coordreuniao < ApplicationRecord
+end

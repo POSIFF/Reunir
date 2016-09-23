@@ -1,0 +1,1 @@
+json.array! @coordreunioes, partial: 'coordreunioes/coordreuniao', as: :coordreuniao

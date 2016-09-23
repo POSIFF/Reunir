@@ -1,0 +1,2 @@
+module PautasHelper
+end

@@ -9,6 +9,16 @@
   </head>
 
   <body>
+
+  	<%= image_tag 'logo.jpg', class: 'logo' %>
+
+  	</hr>
+  	<%= link_to 'Reuniões', reunioes_path %>
+  	<%= link_to 'Gerências', coordreunioes_path %>
+  	<%= link_to 'Coordenadores',  gerencias_path %>
+  	</hr>
+
+
     <%= yield %>
   </body>
 </html>

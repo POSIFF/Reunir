@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pautas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Descricao</th>
+      <th>Autor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pautas.each do |pauta| %>
+      <tr>
+        <td><%= pauta.codigo %></td>
+        <td><%= pauta.descricao %></td>
+        <td><%= pauta.autor %></td>
+        <td><%= link_to 'Show', pauta %></td>
+        <td><%= link_to 'Edit', edit_pauta_path(pauta) %></td>
+        <td><%= link_to 'Destroy', pauta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pauta', new_pauta_path %>

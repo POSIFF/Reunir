@@ -1,0 +1,1 @@
+json.partial! "coordreunioes/coordreuniao", coordreuniao: @coordreuniao

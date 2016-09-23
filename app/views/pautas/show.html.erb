@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @pauta.codigo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @pauta.descricao %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @pauta.autor %>
+</p>
+
+<%= link_to 'Edit', edit_pauta_path(@pauta) %> |
+<%= link_to 'Back', pautas_path %>

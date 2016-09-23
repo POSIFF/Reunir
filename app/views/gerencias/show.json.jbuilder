@@ -1,0 +1,1 @@
+json.partial! "gerencias/gerencia", gerencia: @gerencia

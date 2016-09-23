@@ -1,0 +1,32 @@
+<%= form_for(ata) do |f| %>
+  <% if ata.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ata.errors.count, "error") %> prohibited this ata from being saved:</h2>
+
+      <ul>
+      <% ata.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %>
+    <%= f.text_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :autor %>
+    <%= f.text_field :autor %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

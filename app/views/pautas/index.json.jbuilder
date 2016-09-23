@@ -1,0 +1,1 @@
+json.array! @pautas, partial: 'pautas/pauta', as: :pauta

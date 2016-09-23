@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @reuniao.codigo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @reuniao.descricao %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @reuniao.data %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @reuniao.hora %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @reuniao.local %>
+</p>
+
+<p>
+  <strong>Convidados:</strong>
+  <%= @reuniao.convidados %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= @reuniao.imagem %>
+</p>
+
+<p>
+  <strong>Observacoes:</strong>
+  <%= @reuniao.observacoes %>
+</p>
+
+<%= link_to 'Edit', edit_reuniao_path(@reuniao) %> |
+<%= link_to 'Back', reunioes_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @gerencia.sigla %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @gerencia.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_gerencia_path(@gerencia) %> |
+<%= link_to 'Back', gerencias_path %>

@@ -1,0 +1,1 @@
+json.partial! "atas/ata", ata: @ata

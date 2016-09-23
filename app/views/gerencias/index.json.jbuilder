@@ -1,0 +1,1 @@
+json.array! @gerencias, partial: 'gerencias/gerencia', as: :gerencia
