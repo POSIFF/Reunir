@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Reunião</h1>
 <p>
   <strong>Codigo:</strong>
   <%= @reuniao.codigo %>
@@ -26,19 +27,28 @@
 </p>
 
 <p>
+  <strong>Coordenador:</strong>
+  <%= @reuniao.coordreuniao.nome %>
+</p>
+
+<p>
   <strong>Convidados:</strong>
   <%= @reuniao.convidados %>
 </p>
 
 <p>
-  <strong>Imagem:</strong>
-  <%= @reuniao.imagem %>
-</p>
-
-<p>
-  <strong>Observacoes:</strong>
+  <strong>Observações:</strong>
   <%= @reuniao.observacoes %>
 </p>
 
-<%= link_to 'Edit', edit_reuniao_path(@reuniao) %> |
-<%= link_to 'Back', reunioes_path %>
+<%= link_to 'Voltar', reunioes_path , :class => "glyphicon glyphicon-arrow-left" %>
+<%= link_to 'Editar', edit_reuniao_path(@reuniao), :class => "glyphicon glyphicon-pencil" %>
+<td><%= link_to 'Excluir', @reuniao, method: :delete, data: { confirm: 'Tem certeza que deseja excluir a reunião?' }, :class => "glyphicon glyphicon-trash"%></td>
+
+
+  <%= render :template => 'pautas/index'%>
+  <%= render :template => 'atas/index'%>
+
+
+
+

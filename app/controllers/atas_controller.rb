@@ -1,34 +1,43 @@
 class AtasController < ApplicationController
+  respond_to :html
+  before_filter :get_reuniao
   before_action :set_ata, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!
 
   # GET /atas
   # GET /atas.json
   def index
-    @atas = Ata.all
+    @atas = @reuniao.atas
+    respond_to do |format|
+      format.html
+    end
   end
 
-  # GET /atas/1
-  # GET /atas/1.json
   def show
+    @ata = @reuniao.atas.find params[:id]
+    respond_to do |format|
+      format.html
+    end
   end
 
-  # GET /atas/new
   def new
-    @ata = Ata.new
+    @ata = @reuniao.atas.new
+    respond_with @ata
   end
 
-  # GET /atas/1/edit
   def edit
+    @ata = @reuniao.atas.find params[:id]
+    respond_with @ata
   end
 
   # POST /atas
   # POST /atas.json
   def create
-    @ata = Ata.new(ata_params)
+    @ata = @reuniao.atas.create(ata_params)
 
     respond_to do |format|
       if @ata.save
-        format.html { redirect_to @ata, notice: 'Ata was successfully created.' }
+        format.html { redirect_to @reuniao}
         format.json { render :show, status: :created, location: @ata }
       else
         format.html { render :new }
@@ -37,12 +46,11 @@ class AtasController < ApplicationController
     end
   end
 
-  # PATCH/PUT /atas/1
-  # PATCH/PUT /atas/1.json
   def update
+    @ata = @reuniao.atas.find params[:id]
     respond_to do |format|
       if @ata.update(ata_params)
-        format.html { redirect_to @ata, notice: 'Ata was successfully updated.' }
+        format.html { redirect_to @reuniao}
         format.json { render :show, status: :ok, location: @ata }
       else
         format.html { render :edit }
@@ -54,9 +62,10 @@ class AtasController < ApplicationController
   # DELETE /atas/1
   # DELETE /atas/1.json
   def destroy
+    @ata = @reuniao.atas.find params[:id]
     @ata.destroy
     respond_to do |format|
-      format.html { redirect_to atas_url, notice: 'Ata was successfully destroyed.' }
+      format.html { redirect_to @reuniao}
       format.json { head :no_content }
     end
   end
@@ -69,6 +78,10 @@ class AtasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ata_params
-      params.require(:ata).permit(:codigo, :descricao, :autor)
+      params.require(:ata).permit(:codigo, :descricao, :autor, :reuniao_id)
+    end
+
+    def get_reuniao
+      @reuniao = Reuniao.find params[:reuniao_id]
     end
 end

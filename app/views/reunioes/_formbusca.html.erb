@@ -1,0 +1,18 @@
+<%= form_tag(reunioes_path, method: "get") do %>
+  Buscar por:
+  <br>
+  <%= label_tag(:pdescricao, "Descrição:") %>
+  <%= text_field_tag(:pdescricao,  @pdescricao) %>
+  <%= label_tag(:pdataini, "Data:") %>
+  <%= text_field_tag(:pdataini, @pdataini, class: 'datepicker') %>
+  <%= submit_tag 'Filtrar' %>
+<% end %>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+  $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
+  
+});
+  
+</script>

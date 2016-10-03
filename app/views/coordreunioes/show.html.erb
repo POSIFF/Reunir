@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Coordenador</h1>
+
+<p>
+  <strong></strong>
+  <%= image_tag @coordreuniao.foto_url.to_s if @coordreuniao.foto_url.present? %>
+</p>
+
 <p>
   <strong>Matricula:</strong>
   <%= @coordreuniao.matricula %>
@@ -15,5 +22,6 @@
   <%= @coordreuniao.funcao %>
 </p>
 
-<%= link_to 'Edit', edit_coordreuniao_path(@coordreuniao) %> |
-<%= link_to 'Back', coordreunioes_path %>
+<%= link_to 'Voltar', coordreunioes_path, :class => "glyphicon glyphicon-arrow-left" %>
+<%= link_to 'Editar', edit_coordreuniao_path, :class => "glyphicon glyphicon-pencil" %> |
+<td><%= link_to 'Excluir', coordreuniao_path, method: :delete, data: { confirm: 'Confirma a Exclusão deste coordenador?' }, :class => "glyphicon glyphicon-trash" %></td>

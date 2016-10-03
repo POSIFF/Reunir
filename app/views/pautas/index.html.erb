@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pautas</h1>
+<h1>Pauta</h1>
+
+
 
 <table>
   <thead>
@@ -14,18 +16,21 @@
 
   <tbody>
     <% @pautas.each do |pauta| %>
+
       <tr>
         <td><%= pauta.codigo %></td>
         <td><%= pauta.descricao %></td>
         <td><%= pauta.autor %></td>
-        <td><%= link_to 'Show', pauta %></td>
-        <td><%= link_to 'Edit', edit_pauta_path(pauta) %></td>
-        <td><%= link_to 'Destroy', pauta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Visualizar', reuniao_pauta_path(pauta.reuniao,pauta), :class => "glyphicon glyphicon-file" %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
+    <%= link_to 'Criar Pauta', new_reuniao_pauta_path(@reuniao.id) %> <br>
+
 <br>
 
-<%= link_to 'New Pauta', new_pauta_path %>
+

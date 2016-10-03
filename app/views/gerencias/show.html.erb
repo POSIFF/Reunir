@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Gerência</h1>
+
 <p>
   <strong>Sigla:</strong>
   <%= @gerencia.sigla %>
@@ -10,5 +12,7 @@
   <%= @gerencia.descricao %>
 </p>
 
-<%= link_to 'Edit', edit_gerencia_path(@gerencia) %> |
-<%= link_to 'Back', gerencias_path %>
+<%= link_to 'Voltar', gerencias_path, :class => "glyphicon glyphicon-arrow-left" %>
+<%= link_to 'Editar', edit_gerencia_path, :class => "glyphicon glyphicon-pencil" %> |
+<td><%= link_to 'Excluir', gerencia_path, method: :delete, data: { confirm: 'Confirma a Exclusão da gerência?' }, :class => "glyphicon glyphicon-trash" %></td>
+

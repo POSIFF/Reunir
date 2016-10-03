@@ -1,5 +1,6 @@
 class GerenciasController < ApplicationController
   before_action :set_gerencia, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!
 
   # GET /gerencias
   # GET /gerencias.json
@@ -28,7 +29,7 @@ class GerenciasController < ApplicationController
 
     respond_to do |format|
       if @gerencia.save
-        format.html { redirect_to @gerencia, notice: 'Gerencia was successfully created.' }
+        format.html { redirect_to @gerencia}
         format.json { render :show, status: :created, location: @gerencia }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class GerenciasController < ApplicationController
   def update
     respond_to do |format|
       if @gerencia.update(gerencia_params)
-        format.html { redirect_to @gerencia, notice: 'Gerencia was successfully updated.' }
+        format.html { redirect_to @gerencia}
         format.json { render :show, status: :ok, location: @gerencia }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class GerenciasController < ApplicationController
   def destroy
     @gerencia.destroy
     respond_to do |format|
-      format.html { redirect_to gerencias_url, notice: 'Gerencia was successfully destroyed.' }
+      format.html { redirect_to gerencias_url}
       format.json { head :no_content }
     end
   end

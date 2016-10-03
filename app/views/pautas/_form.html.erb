@@ -1,10 +1,10 @@
-<%= form_for(pauta) do |f| %>
-  <% if pauta.errors.any? %>
+<%= form_for([@reuniao, @pauta]) do |f| %>
+  <% if @pauta.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pauta.errors.count, "error") %> prohibited this pauta from being saved:</h2>
+      <h2><%= pluralize(@pauta.errors.count, "error") %> prohibited this pauta from being saved:</h2>
 
       <ul>
-      <% pauta.errors.full_messages.each do |message| %>
+      <% @pauta.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :codigo %>
-    <%= f.text_field :codigo %>
+    <%= f.label :codigo, "Código da Pauta" %>
+    <%= f.text_field :codigo, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :descricao %>
+    <%= f.label :descricao, "Descrição:" %>
     <%= f.text_field :descricao %>
   </div>
 
   <div class="field">
-    <%= f.label :autor %>
+    <%= f.label :autor, "Autor da Pauta:" %>
     <%= f.text_field :autor %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", :class => "btn btn-default" %>
   </div>
 <% end %>

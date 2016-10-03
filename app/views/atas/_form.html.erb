@@ -1,10 +1,10 @@
-<%= form_for(ata) do |f| %>
-  <% if ata.errors.any? %>
+<%= form_for([@reuniao, @ata]) do |f| %>
+  <% if @ata.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ata.errors.count, "error") %> prohibited this ata from being saved:</h2>
+      <h2><%= pluralize(@ata.errors.count, "error") %> prohibited this ata from being saved:</h2>
 
       <ul>
-      <% ata.errors.full_messages.each do |message| %>
+      <% @ata.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,21 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :codigo %>
-    <%= f.text_field :codigo %>
+    <%= f.label :codigo, "Código da Ata:" %>
+    <%= f.text_field :codigo, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_field :descricao %>
+    <%= f.label :descricao, "Descrição:" %> <br>
+    <%= f.text_area :descricao,:rows => 10, :cols => 50%>
   </div>
 
   <div class="field">
-    <%= f.label :autor %>
+    <%= f.label :autor, "Autor da Ata:" %>
     <%= f.text_field :autor %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", :class => "btn btn-default" %>
   </div>
+
 <% end %>

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Item de Ata</h1>
+
 <p>
   <strong>Codigo:</strong>
   <%= @ata.codigo %>
@@ -15,5 +17,6 @@
   <%= @ata.autor %>
 </p>
 
-<%= link_to 'Edit', edit_ata_path(@ata) %> |
-<%= link_to 'Back', atas_path %>
+<%= link_to 'Voltar', @reuniao, :class => "glyphicon glyphicon-arrow-left" %>
+<%= link_to 'Editar', edit_reuniao_ata_path, :class => "glyphicon glyphicon-pencil" %> |
+<td><%= link_to 'Excluir', reuniao_ata_path, method: :delete, data: { confirm: 'Confirma a Exclusão deste item?' }, :class => "glyphicon glyphicon-trash" %></td>

@@ -10,15 +10,26 @@
 
   <body>
 
-  	<%= image_tag 'logo.jpg', class: 'logo' %>
+    <%= render "layouts/navbar" %>
 
-  	</hr>
-  	<%= link_to 'Reuniões', reunioes_path %>
-  	<%= link_to 'Gerências', coordreunioes_path %>
-  	<%= link_to 'Coordenadores',  gerencias_path %>
-  	</hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
 
+        <% if usuario_signed_in? %>
+          <%= render "layouts/latbar" %>
+        <%end%> 
+        </div>
+        <div class="col-md-9">
+        <div class="panel-body">
+         <%= yield %>
 
-    <%= yield %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+    </div> <!-- row -->
+  </div> <!-- container -->
+
   </body>
 </html>

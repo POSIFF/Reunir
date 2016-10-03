@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>Reuniões</h1>
 
-<h1>Reunioes</h1>
+<hr/>
+<%= render 'formbusca' %>
+<hr/>
 
 <table>
   <thead>
@@ -8,11 +10,9 @@
       <th>Codigo</th>
       <th>Descricao</th>
       <th>Data</th>
-      <th>Hora</th>
-      <th>Local</th>
-      <th>Convidados</th>
-      <th>Imagem</th>
-      <th>Observacoes</th>
+      <th>Coordenador</th>
+      <th>Gerência</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,14 +23,11 @@
         <td><%= reuniao.codigo %></td>
         <td><%= reuniao.descricao %></td>
         <td><%= reuniao.data %></td>
-        <td><%= reuniao.hora %></td>
-        <td><%= reuniao.local %></td>
-        <td><%= reuniao.convidados %></td>
-        <td><%= reuniao.imagem %></td>
-        <td><%= reuniao.observacoes %></td>
-        <td><%= link_to 'Show', reuniao %></td>
-        <td><%= link_to 'Edit', edit_reuniao_path(reuniao) %></td>
-        <td><%= link_to 'Destroy', reuniao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= reuniao.coordreuniao.nome %></td>
+        <td><%= reuniao.gerencia.sigla %></td>
+        <td></td>
+        <td ><%= link_to 'Abrir Reunião', reuniao, :class => "glyphicon glyphicon-file"%></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +35,6 @@
 
 <br>
 
-<%= link_to 'New Reuniao', new_reuniao_path %>
+<%= link_to 'Nova Reuniao', new_reuniao_path, :class => "btn btn-default"%> <br>
+<%= will_paginate @reunioes, previous_label: "Anterior", next_label: "Próxima" %><br/><br>
+

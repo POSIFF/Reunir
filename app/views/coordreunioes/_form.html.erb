@@ -11,22 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :matricula %>
-    <%= f.number_field :matricula %>
+  <div>
+    <%= f.label :foto, "Foto:" %>
+    <%= image_tag @coordreuniao.foto_url, class: 'foto' if @coordreuniao.foto? %>
+    <%= f.file_field :foto, label: 'Foto' , input_html: {accept: ('application/jpg') } %>
+  <br/>
   </div>
 
   <div class="field">
-    <%= f.label :nome %>
+    <%= f.label :matricula, "Matrícula:" %>
+    <%= f.text_field :matricula %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome, "Nome do Coordenador:" %>
     <%= f.text_field :nome %>
   </div>
 
   <div class="field">
-    <%= f.label :funcao %>
+    <%= f.label :funcao, "Função do Coordenador:" %>
     <%= f.text_field :funcao %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", :class => "btn btn-default" %>
   </div>
 <% end %>

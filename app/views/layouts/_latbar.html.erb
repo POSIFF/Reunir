@@ -1,0 +1,29 @@
+<div id="wrapper">
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="#" >
+					<h4>Menu</h4>
+				</a>
+			</li>
+			<li style="font-size: 20px;">
+				<%= link_to ' Gerências', gerencias_path, class: "glyphicon glyphicon-home" %>
+			</li></br>
+			
+			<li style="font-size: 20px;">
+				<%= link_to ' Coordenadores', coordreunioes_path, class: "glyphicon glyphicon-user"%>
+			</li></br>
+
+			<li style="font-size: 20px;">
+				<%= link_to ' Reuniões', reunioes_path, class: "glyphicon glyphicon-calendar" %>
+			</li></br>
+
+
+
+			<li style="font-size: 20px;">
+				<%= link_to " Relatório", listar_reunioes_path(@reuniao,  :format => 'pdf'), target: '_blank', class: "glyphicon glyphicon-print" %> 
+			</li>
+
+		</ul>
+	</div>
+</div>

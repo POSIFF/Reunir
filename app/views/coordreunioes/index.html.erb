@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Coordreunioes</h1>
+<h1>Coordenadores</h1>
 
 <table>
   <thead>
@@ -18,9 +16,8 @@
         <td><%= coordreuniao.matricula %></td>
         <td><%= coordreuniao.nome %></td>
         <td><%= coordreuniao.funcao %></td>
-        <td><%= link_to 'Show', coordreuniao %></td>
-        <td><%= link_to 'Edit', edit_coordreuniao_path(coordreuniao) %></td>
-        <td><%= link_to 'Destroy', coordreuniao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', coordreuniao, :class => "glyphicon glyphicon-file" %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +25,5 @@
 
 <br>
 
-<%= link_to 'New Coordreuniao', new_coordreuniao_path %>
+<%= link_to 'Novo Coordenador', new_coordreuniao_path, :class => "btn btn-default" %><br><br>
+

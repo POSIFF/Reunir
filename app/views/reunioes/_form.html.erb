@@ -1,57 +1,72 @@
-<%= form_for(reuniao) do |f| %>
-  <% if reuniao.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reuniao.errors.count, "error") %> prohibited this reuniao from being saved:</h2>
+<%= form_for(@reuniao) do |f| %>
+<% if reuniao.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(reuniao.errors.count, "error") %> prohibited this reuniao from being saved:</h2>
 
-      <ul>
-      <% reuniao.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :codigo %>
-    <%= f.text_field :codigo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_field :descricao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :data %>
-    <%= f.date_select :data %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hora %>
-    <%= f.text_field :hora %>
-  </div>
-
-  <div class="field">
-    <%= f.label :local %>
-    <%= f.text_field :local %>
-  </div>
-
-  <div class="field">
-    <%= f.label :convidados %>
-    <%= f.text_field :convidados %>
-  </div>
-
-  <div class="field">
-    <%= f.label :imagem %>
-    <%= f.text_field :imagem %>
-  </div>
-
-  <div class="field">
-    <%= f.label :observacoes %>
-    <%= f.text_field :observacoes %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul>
+    <% reuniao.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+</div>
 <% end %>
+
+<div class="field">
+  <%= f.label :codigo, "Código da Reunião:" %>
+  <%= f.text_field :codigo, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :descricao, "Descrição:" %>
+  <%= f.text_field :descricao %>
+</div>
+
+<div class="field",>
+  <%= f.label :data, "Data da Reunião:" %>
+  <%= f.text_field :data , class: 'datepicker' %>
+</div>
+
+<div class="field">
+  <%= f.label :hora, "Horário da Reunião:" %>
+  <%= f.text_field :hora %>
+</div>
+
+<div class="field">
+  <%= f.label :local, "Local da Reunião:" %>
+  <%= f.text_field :local %>
+</div>
+
+<div class="field">
+  <%= f.label :gerencia_id, "Gerência:" %>
+  <%= f.select :gerencia_id, options_for_select(Gerencia.all.map{|m|[m.sigla,m.id]},f.object.gerencia_id) %>
+</div>
+
+<div class="field">
+  <%= f.label :coordreuniao_id, "Coordenador:" %>
+  <%= f.select :coordreuniao_id, options_for_select(Coordreuniao.all.map{|m|[m.nome,m.id]},f.object.coordreuniao_id) %>
+</div>
+
+
+<div class="field">
+  <%= f.label :convidados, "Convidados:" %> <br>
+  <%= f.text_area :convidados,:rows => 15, :cols => 50%>
+</div>
+
+<div class="field">
+  <%= f.label :observacoes, "Observações:" %> <br>
+  <%= f.text_area :observacoes,:rows => 10, :cols => 50%>
+</div>
+
+<div class="actions">
+  <%= f.submit "Salvar", :class => "btn btn-default" %>
+</div>
+<% end %>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('.datepicker').datepicker({format: 'dd-mm-yyyy', language: 'pt-BR'});
+});
+  
+</script>
+

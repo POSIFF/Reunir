@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Atas</h1>
+<h1>Ata</h1>
 
 <table>
   <thead>
@@ -18,14 +18,16 @@
         <td><%= ata.codigo %></td>
         <td><%= ata.descricao %></td>
         <td><%= ata.autor %></td>
-        <td><%= link_to 'Show', ata %></td>
-        <td><%= link_to 'Edit', edit_ata_path(ata) %></td>
-        <td><%= link_to 'Destroy', ata, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', reuniao_ata_path(ata.reuniao,ata), :class => "glyphicon glyphicon-file" %></td>
+
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
+    <%= link_to 'Criar Ata', new_reuniao_ata_path(@reuniao.id) %> <br>
+
 <br>
 
-<%= link_to 'New Ata', new_ata_path %>
+

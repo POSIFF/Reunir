@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Gerencias</h1>
+<h1>Gerências</h1>
 
 <table>
   <thead>
@@ -16,9 +16,7 @@
       <tr>
         <td><%= gerencia.sigla %></td>
         <td><%= gerencia.descricao %></td>
-        <td><%= link_to 'Show', gerencia %></td>
-        <td><%= link_to 'Edit', edit_gerencia_path(gerencia) %></td>
-        <td><%= link_to 'Destroy', gerencia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar',gerencia, :class => "glyphicon glyphicon-file" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Gerencia', new_gerencia_path %>
+<%= link_to 'Nova Gerência', new_gerencia_path, :class => "btn btn-default" %><br><br>
+

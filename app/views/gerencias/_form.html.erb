@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :sigla %>
-    <%= f.text_field :sigla %>
+    <%= f.label :sigla, "Sigla da Gerência:" %>
+    <%= f.text_field :sigla, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :descricao %>
+    <%= f.label :descricao, "Descrição:" %>
     <%= f.text_field :descricao %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", :class => "btn btn-default" %>
   </div>
 <% end %>

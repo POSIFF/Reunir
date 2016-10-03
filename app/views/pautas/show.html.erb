@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Item de Pauta</h1>
+
 <p>
   <strong>Codigo:</strong>
   <%= @pauta.codigo %>
@@ -15,5 +17,6 @@
   <%= @pauta.autor %>
 </p>
 
-<%= link_to 'Edit', edit_pauta_path(@pauta) %> |
-<%= link_to 'Back', pautas_path %>
+<%= link_to 'Voltar', @reuniao, :class => "glyphicon glyphicon-arrow-left" %>
+<%= link_to 'Editar', edit_reuniao_pauta_path, :class => "glyphicon glyphicon-pencil" %> |
+<td><%= link_to 'Excluir', reuniao_pauta_path, method: :delete, data: { confirm: 'Confirma a Exclusão deste item?' }, :class => "glyphicon glyphicon-trash" %></td>
